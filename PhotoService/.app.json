@@ -1,0 +1,29 @@
+{
+  "type": "kendo-ui-mobile",
+  "views": [
+    {
+      "type": "kendo-ui-mobile:view",
+      "name": "homeView",
+      "components": [],
+      "title": "Home View",
+      "addToNavigation": true,
+      "icon": "search"
+    },
+    {
+      "type": "kendo-ui-mobile:view",
+      "name": "settingsView",
+      "components": [],
+      "title": "Settings",
+      "addToNavigation": true,
+      "icon": "settings"
+    }
+  ],
+  "dataProviders": [],
+  "name": "kendoUiMobileApp",
+  "navigation": "listmenu",
+  "transition": "slide",
+  "skin": "nova",
+  "skinMainColor": "#32364c",
+  "skinTextColor": "#ffffff",
+  "skinAccentColor": "#ff4350"
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, width=device-width">
+    <link href="kendo/styles/kendo.mobile.all.min.css" rel="stylesheet">
+    <link href="styles/overrides.css" rel="stylesheet">
+    <link href="styles/main.css" rel="stylesheet">
+    <script src="cordova.js"></script>
+    <script src="kendo/js/jquery.min.js"></script>
+    <script src="kendo/js/kendo.mobile.min.js"></script>
+    <script src="app.js"></script>
+    <script src="js/list.js"></script>
+    <script src="js/pics_list.js"></script>
+</head>
+
+<body id="kendoUiMobileApp">
+    <div data-role="view" data-id="main-layout" id="main-layout">
+    </div>
+    <div data-role="view" data-id="pics-layout" id="pics-layout">
+    </div>
+    <div data-role="drawer" id="app-drawer">
+        <div data-role="header">
+            <div data-role="navbar">
+                <span data-role="view-title">Menu</span>
+            </div>
+        </div>
+        <ul data-role="listview" data-source="image_applets" data-template="menu-template" data-click="navigateMenu" />
+    </div>
+    <script type="text/x-kendo-template" id="menu-template">
+        <a href="Views/list.html?type=#:type#"> #:caption# </a>
+    </script>
+    <script>
+        function navigateMenu(e){
+            e.preventDefault();
+            var i=($(e.item).index());
+            var ia=image_applets[i];
+            app.requested_type=ia.type;
+            app.mobileApp.navigate("Views/list.html?type=" + ia.type);
+        }
+    </script>
+</body>
+
+</html>
